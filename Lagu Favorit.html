@@ -1,0 +1,76 @@
+HTML
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuesioner Lagu Favorit</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 0; padding: 20px; }
+        .container { max-width: 600px; background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: auto; }
+        h2 { color: #333; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="text"], select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .checkbox-group label { font-weight: normal; display: inline-block; margin-right: 15px; }
+        button { background-color: #4CAF50; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Kuesioner Lagu Favorit</h2>
+    <form id="songSurveyForm">
+        <div class="form-group">
+            <label for="nama">Nama / Inisial (Opsional):</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda">
+        </div>
+
+        <div class="form-group">
+            <label for="judulLagu">Judul Lagu & Penyanyi Favorit Saat Ini:</label>
+            <input type="text" id="judulLagu" name="judulLagu" placeholder="Contoh: Coldplay - Yellow" required>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre Musik Utama:</label>
+            <select id="genre" name="genre" required>
+                <option value="">Pilih Genre</option>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Hip-Hop">Hip-Hop / Rap</option>
+                <option value="Jazz">Jazz / Blues</option>
+                <option value="Dangdut">Dangdut / Koplo</option>
+                <option value="Indie">Indie / Alternatif</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Alasan Menyukai Lagu Tersebut (Pilih yang sesuai):</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="alasan1" name="alasan" value="Lirik"> <label for="alasan1">Lirik Bermakna</label>
+                <input type="checkbox" id="alasan2" name="alasan" value="Melodi"> <label for="alasan2">Melodi Enak</label>
+                <input type="checkbox" id="alasan3" name="alasan" value="Kenangan"> <label for="alasan3">Punya Kenangan</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="catatan">Kapan biasanya Anda mendengarkan lagu ini?</label>
+            <textarea id="catatan" name="catatan" rows="3" placeholder="Ceritakan sedikit..."></textarea>
+        </div>
+
+        <button type="submit">Kirim Kuesioner</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('songSurveyForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Terima kasih! Data kuesioner lagu favorit Anda telah direkam.');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
